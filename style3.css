@@ -1,0 +1,132 @@
+@charset "UTF-8";
+html{
+font-family:"Bitcount Prop Double Ink",sans-serif;
+font-family:"Kiwi Maru",sans-serif;
+background-color:#e2c6ff;
+header{
+height:60px;
+width:100%;
+position:fixed;
+top:0;
+background-color:#D8BFD8;
+text-align:center;
+}
+header img{
+height:60px;
+}
+nav{
+color:#4B0082;
+height:60px;
+width:45%;
+position:absolute;
+top:0;
+right:0;
+background-color:#D8BFD8;
+}
+@media(max-width:1024px){
+  nav{
+   width:100%;
+   top:50px;
+  }
+}
+nav ul{
+height:60px;
+display:flex;
+justify-content:center;
+align-text:center;
+}
+nav ul li{
+margin:16px;
+}
+a:hover{
+color:#de0215;
+}
+
+/*.fixed{
+width:60px;
+height:60px;
+background-color:#888;
+position:fixed;
+top:0;
+right:0;
+}*/
+main{
+width:100%;
+}
+h1{
+padding-top:120px;
+font-size:40px;
+color:#a260bf;
+text-align:center;
+}
+h1+p{
+color:#4B0082;
+text-align:center;
+margin-top:25px;
+}
+.mainimages{
+width:100%;
+margin-top:20px;
+}
+.mainprot{
+font-size:30px;
+font-height:lighter;
+line-height:2;
+text-align:center;
+margin-top:30px;
+color:#a260bf;
+
+}
+
+.mainprot1{
+color:#4B0082;
+font-size:30px;
+font-height:lighter;
+line-height:2;
+text-align:center;
+margin-top:30px;
+}
+.mainprot2{
+color:#4B0082;
+font-size:30px;
+font-height:lighter;
+line-height:2;
+text-align:center;
+margin-top:10px;
+}
+article{
+text-align:center;
+}
+@media(man-width:1025px){
+   article{
+   text-align:left;
+   }
+}
+/* MVサムネ用 article の余白調整 */
+main article {
+  margin-top: 50px; 
+}
+.youtube-thumb img {
+  width: 400px;   
+  height: 250px;  
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.youtube-thumb1 img {
+  width: 400px;   
+  height: 250px;  
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.youtube-thumb img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+.youtube-thumb1 img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}

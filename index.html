@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" conent="width=device-width">
+  <title>自作webページ</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="icon" href="images/zutomayo.ico" sizes="200x200">
+  <link rel="apple-touch-icon" href="images/zutomayo.png" sizes="200x200">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&family=Kiwi+Maru&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+   <header>
+    <img src="images/zutomayo1.svg" alt="自作HPロゴ" size="100x100">
+    <nav>
+     <ul>
+      <div class="fixed"></div>
+      <li><a href="#">トップ</a></li>
+      <li><a href="about.html">すとまよとは</a></li>
+      <li><a href="MV.html">MV</a></li>
+      <li><a href="info.html">新着情報</a></li>
+     </ul>
+    </nav>
+
+   </header>
+   <main>
+   <article>
+   <h1>ずっと真夜中でいいのに。</h1>
+   <p>ZUTOMAYO</p>
+<div id="slideshow-container">
+  <img id="slide-image" src="images/mainimages.jpg" alt="メインの写真">
+  <button id="prev-btn"></button>
+  <button id="next-btn"></button>
+</div>
+<script>//画像の高さを100%,幅も100%にする
+const images = ['images/mainimages.jpg', 'images/mainimages1.jpg', 'images/mainimages2.jpg','images/mainimages3.jpg'];
+let currentImageIndex = 0; // 現在の画像のインデックス
+const slideImage = document.getElementById('slide-image');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+function showImage(index) {
+  if (index >= 0 && index < images.length) {
+    slideImage.src = images[index];
+    currentImageIndex = index;
+  }
+}
+
+nextBtn.addEventListener('click', () => {
+  showImage((currentImageIndex + 1) % images.length); // 次の画像へ（ループ）
+});
+
+prevBtn.addEventListener('click', () => {
+  showImage((currentImageIndex - 1 + images.length) % images.length); // 前の画像へ（ループ）
+});
+setInterval(() => {
+  showImage((currentImageIndex + 1) % images.length);
+}, 3000); // 3秒ごとに自動で切り替え
+
+</script>
+   <p class="mainprot">ずっと真夜中でいいのに。を紹介するwebページです！</p>
+   <!--スライドショーの画像表示→クリックでリンク先に飛ぶ-->
+</article>
+   </main>
+  </body>
+</html>

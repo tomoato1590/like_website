@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自作webページ</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="icon" href="images/zutomayo.ico" sizes="200x200">
+  <link rel="apple-touch-icon" href="images/zutomayo.png" sizes="200x200">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <img src="images/zutomayo1.svg" alt="自作HPロゴ" size="100x100">
+
+  <nav>
+    <div class="fixed"></div>
+<ul>
+  <li><a href="index.html">トップ</a></li>
+  <li><a href="about.html">すとまよとは</a></li>
+  <li><a href="MV.html">MV</a></li>
+  <li><a href="info.html">新着情報</a></li>
+</ul>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <h1>ずっと真夜中でいいのに。<br>MV</h1>
+    <p>ZUTOMAYO</p>
+    <div id="slideshow-container">
+<img id="slide-image" src="images/mainimages.jpg" alt="メインの写真">
+<button id="prev-btn"></button>
+<button id="next-btn"></button>
+</div>
+<script>
+const images = ['images/mainimages.jpg', 'images/mainimages1.jpg', 'images/mainimages2.jpg','images/mainimages3.jpg'];
+let currentImageIndex = 0; // 現在の画像のインデックス
+const slideImage = document.getElementById('slide-image');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+function showImage(index) {
+  if (index >= 0 && index < images.length) {
+    slideImage.src = images[index];
+    currentImageIndex = index;
+  }
+}
+
+nextBtn.addEventListener('click', () => {
+  showImage((currentImageIndex + 1) % images.length); // 次の画像へ（ループ）
+});
+
+prevBtn.addEventListener('click', () => {
+  showImage((currentImageIndex - 1 + images.length) % images.length); // 前の画像へ（ループ）
+});
+setInterval(() => {
+  showImage((currentImageIndex + 1) % images.length);
+}, 3000); // 3秒ごとに自動で切り替え
+
+</script>
+
+    <p class="mainprot1">
+      ずっと真夜中でいいのに。MV紹介<br>
+      自分が好きな曲のMV(Music Video)を紹介します！
+    </p>
+  </article>
+<section id="MV">
+<ul>
+ <li>
+<article>
+  <a href="https://www.youtube.com/watch?v=I88PrE-KUPk" target="_blank" class="youtube-thumb">
+    <img src="https://img.youtube.com/vi/I88PrE-KUPk/maxresdefault.jpg" alt="MIRABOの動画リンク">
+  </a>
+  <p class="mainprot">MIRABO</p>
+  <p class="mainprot2">・イントロとサビがとても良い！</p>
+</article>
+ </li>
+ <li>
+<article>
+  <a href="https://www.youtube.com/watch?v=PLG2Uexyi9s" target="_blank" class="youtube-thumb1">
+    <img src="https://img.youtube.com/vi/PLG2Uexyi9s/maxresdefault.jpg" alt="海馬成長痛の動画リンク">
+  </a>
+  <p class="mainprot">海馬成長痛</p>
+  <p class="mainprot2">・サビのリズムが心地いい！</p>
+  <p class="mainprot2">・ラスサビの歌詞が変わっているところがとてもいい！</p>
+ </li>
+</article>
+ <li>
+<article>
+<a href=https://youtu.be/Atvsg_zogxo?si=q9qlqkdVl_bWx7gC" target="_blank" class="youtube-thumb1">
+  <img src="https://img.youtube.com/vi/Atvsg_zogxo/maxresdefault.jpg" alt="動画サムネ">
+</a>
+<p class="mainprot">お勉強しといてよ</p>
+<p class="mainprot2">・サビのリズムが心地いい！</p>
+</article>
+ </li>
+</ul>
+</section>
+</main>
+
+</body>
+</html>
